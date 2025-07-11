@@ -1,18 +1,7 @@
 <template>
-    <div>
-        <h2>18. Список игральных карт</h2>
-        Массив объектов: [{ id: 1, suit: "Пики", value: "Король" }].<br>
-        Отрисовка: Список карт в виде карточек.<br>
-        Форма: Добавление новой карты (поля "масть", "значение").
-    </div>
-    <div>
-        1. Массив объектов: Создайте массив с начальными данными (например, tasks, books, movies).
-        <br>2. Отрисовка списка: Используйте v-for для отображения элементов массива.
-        <br>3. Со звездочкой добавить form input и put запрос. Редактирование: Добавьте возможность редактирования
-        существующих объектов через форму.
-    </div>
+    <site-desc></site-desc>
 
-    <div>
+    <div class="inputForm">
         <h2>Показать конкретные карты:</h2>
         Выберите значение карты:
         <input
@@ -33,26 +22,21 @@
         <option value="Бубны">Бубны</option>
         </select>
         <button class="my-btn" @click="showCard">Найти</button>
-
-        
-
     </div>
 
-    <div>
-        <h2>Список карт:</h2>
-        <div v-for="card in foundCards" :key="card.id">
-            {{ card.suit }} {{ card.value }}
-        </div>
-        <div v-if="foundCards.length === 0">
-            Карт не найдено!
-        </div>
-    </div>
+    <list-of-cards :found-cards="foundCards"></list-of-cards>
 </template>
 
 <script>
 import cards from './assets/cards.js';
+import ListOfCards from './components/listOfCards.vue';
+import SiteDesc from './components/SiteDesc.vue';
 
 export default {
+    components:{
+        SiteDesc,
+        ListOfCards
+    },
     data(){
         return{
             cards: cards,
@@ -64,18 +48,35 @@ export default {
     },
     methods:{
         showCard(){
-            this.searchPerformed = true
-            if (this.cardSuit === "Любая") {
-                // Ищем все карты с указанным значением в любой масти
+            // Если не указано значение И масть "Любая" - выводим всю колоду
+            if (this.cardValue === '' && this.cardSuit === 'Любая') {
+                this.foundCards = [...this.cards];
+                return
+            }
+            
+            // Если не указано значение, но выбрана масть - выводим все карты этой масти
+            if (this.cardValue === '') {
+                this.foundCards = this.cards.filter(card => 
+                this.cardSuit === 'Любая' || card.suit === this.cardSuit
+                );
+                return
+            }
+            
+            // Нормализация введенного значения (для удобства поиска)
+            const normalizedValue = this.cardValue.toLowerCase();
+            
+            // Если масть "Любая" - ищем по значению во всех мастях
+            if (this.cardSuit === 'Любая') {
                 this.foundCards = this.cards.filter(card => 
                 card.value.toLowerCase() === this.cardValue.toLowerCase()
                 );
-            } else {
-            // Ищем конкретную карту по значению и масти
-            this.foundCards = this.cards.filter(card => 
-            card.value.toLowerCase() === this.cardValue.toLowerCase() && 
-            card.suit === this.cardSuit
-            );
+            } 
+            // Иначе ищем конкретную карту
+            else {
+                this.foundCards = this.cards.filter(card => 
+                card.value.toLowerCase() === this.cardValue.toLowerCase() && 
+                card.suit === this.cardSuit
+                );
             }
         }
     }    

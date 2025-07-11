@@ -5,7 +5,7 @@ const cards = [
     { id: 4, suit: "Пики", value: "9" },
     { id: 5, suit: "Пики", value: "10" },
     { id: 6, suit: "Пики", value: "Валет" },
-    { id: 7, suit: "Пики", value: "Королева" },
+    { id: 7, suit: "Пики", value: "Дама" },
     { id: 8, suit: "Пики", value: "Король" },
     { id: 9, suit: "Пики", value: "Туз" },
 
@@ -15,7 +15,7 @@ const cards = [
     { id: 13, suit: "Крести", value: "9" },
     { id: 14, suit: "Крести", value: "10" },
     { id: 15, suit: "Крести", value: "Валет" },
-    { id: 16, suit: "Крести", value: "Королева" },
+    { id: 16, suit: "Крести", value: "Дама" },
     { id: 17, suit: "Крести", value: "Король" },
     { id: 18, suit: "Крести", value: "Туз" },
 
@@ -25,7 +25,7 @@ const cards = [
     { id: 22, suit: "Червы", value: "9" },
     { id: 23, suit: "Червы", value: "10" },
     { id: 24, suit: "Червы", value: "Валет" },
-    { id: 25, suit: "Червы", value: "Королева" },
+    { id: 25, suit: "Червы", value: "Дама" },
     { id: 26, suit: "Червы", value: "Король" },
     { id: 27, suit: "Червы", value: "Туз" },
 
@@ -35,7 +35,7 @@ const cards = [
     { id: 31, suit: "Бубны", value: "9" },
     { id: 32, suit: "Бубны", value: "10" },
     { id: 33, suit: "Бубны", value: "Валет" },
-    { id: 34, suit: "Бубны", value: "Королева" },
+    { id: 34, suit: "Бубны", value: "Дама" },
     { id: 35, suit: "Бубны", value: "Король" },
     { id: 36, suit: "Бубны", value: "Туз" },
 ];
