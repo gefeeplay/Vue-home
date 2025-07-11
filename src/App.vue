@@ -8,7 +8,7 @@
     <div>
         1. Массив объектов: Создайте массив с начальными данными (например, tasks, books, movies).
         <br>2. Отрисовка списка: Используйте v-for для отображения элементов массива.
-        <br>4. Со звездочкой добавить form input и put запрос. Редактирование: Добавьте возможность редактирования
+        <br>3. Со звездочкой добавить form input и put запрос. Редактирование: Добавьте возможность редактирования
         существующих объектов через форму.
     </div>
 
@@ -83,16 +83,5 @@ export default {
 </script>
 
 <style scoped>
-.my-input{
-    display: flex;
-    min-width: 100px;
-    min-height: 25px;
-}
-.my-btn{
-    margin-top: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
-    min-width: 100px;
-    min-height: 25px;
-}
+
 </style>
