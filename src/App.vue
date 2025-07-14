@@ -1,7 +1,7 @@
 <template>
     <site-desc></site-desc>
 
-    <div class="inputForm">
+    <div class="block inputForm">
         <h2>Показать конкретные карты:</h2>
         Выберите значение карты:
         <input

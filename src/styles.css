@@ -6,7 +6,7 @@
 
 .my-input {
     display: flex;
-    min-width: 100px;
+    min-width: 170px;
     min-height: 25px;
     background-color: #DEEFFA;
     border: none;
@@ -18,7 +18,7 @@
     margin-top: 10px;
     border: none;
     border-radius: 5px;
-    min-width: 100px;
+    min-width: 170px;
     min-height: 25px;
     background-color: #DEEFFA;
 }
@@ -31,15 +31,22 @@ div {
     margin-top: 10px;
 }
 
-.inputForm {
+.block {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     border: none;
     border-radius: 10px;
     background-color: #9ECA90;
-    max-width: 500px;
+}
+
+.block.inputForm {
+    gap: 5px;
+    padding: 15px;
     padding-bottom: 20px;
+}
+
+.desc {
+    padding: 10px;
 }

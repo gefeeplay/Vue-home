@@ -53,7 +53,8 @@ export default {
 }
 
 .card-item {
-    border: 1px solid black;
+    background-color: white;
+    border: none;
     box-shadow: 1px 1px 1px gray;
     border-radius: 20px;
     height: 300px;
